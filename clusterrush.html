@@ -1,0 +1,351 @@
+
+
+
+<title>hi</title>
+<style>
+  body {
+    background-color: #36393e;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease-in-out; /* Add transition property */
+  }
+  
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  nav .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  nav .icon img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  nav a {
+    color: #e1e1e1;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    transition: color 0.2s ease-in-out;
+    margin: 0 20px; /* Add margin to create spacing between links */
+  }
+  
+  nav a:hover {
+    color: #b1b1b1;
+  }
+  
+  img {
+    border-radius: 20px;
+  
+  }
+  
+
+  .gamedesc {
+    font-family: 'arial';
+    font-size: 8px;
+    text-align: center;
+  }
+  .topinfo {
+    font-family: 'Nunito Sans';
+    font-size: 20px;
+    text-align: center;
+  }
+  .gameinfo{
+    color: white;
+    text-align: center;
+    padding: 3px;
+    font-size: 20px;
+    font-family: 'arial';
+  }
+  .gameimage{
+    width: 150px;
+    height: 150px;
+    display:inline-block; 
+    padding:0px; 
+    margin:0px;
+    border-radius: 20px;
+  }
+  .gamecard{
+    width: 170px;
+    height: 270px;
+    background-color: #2e2e2e;
+    padding: 10px; 
+    margin: 10px;
+    border-radius: 20px;
+    transition: transform .5s;
+    justify-content: left;
+    float: left;
+    box-shadow: 0px 5px 10px 0px #2e2e2e,  0px 0px 1px 0px #2e2e2e;
+    
+  }
+  .gamecard:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    box-shadow: 0px 5px 10px 0px #2e2e2e, 0px 0px 3px 0px #2e2e2e;
+  }
+  .gamename{
+    font-size: 20px;
+    font-family: 'arial';
+  }
+  .gamecontainer{
+    display: flex;
+    flex-direction: row;
+    order: 0;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }  
+  a:link{
+    text-decoration: none;
+  }
+
+  #fullscreen-button{
+    bottom: -430px;
+    right: -1300px;
+  }
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    order: 0;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  #myInput{
+    left: 50%;
+    right: 50%;
+    width: 400px;
+    height: 65px;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    background-color: #1e2124;
+    color: #fff;
+    border-radius: 15px;
+    border-style: hidden;
+    box-shadow: 0px 5px 10px 0px #2e2e2e;
+  }
+  input:focus {
+      outline-width: 0;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .btn {
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 2px solid #0f0f0f;
+    border-radius: 0.5rem;
+    position: relative;
+    top: 0;
+    text-align: left;
+    box-shadow: 0px 5px 10px 0px #2e2e2e;
+  }
+
+  .recent {
+    text-align: center;
+    background: #1e2124;
+    opacity: 0.85;
+    font-family: 'Lilita One';
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    position: relative;
+    top: 0;
+    text-align: center;
+    box-shadow: 0px 5px 10px 0px #2e2e2e;
+  }
+  
+
+  
+  </style>
+  
+  
+  
+  <body>
+    <nav>
+      <div class="icon" onclick="changeBgColor()"><img src="https://cdn-icons-png.flaticon.com/512/126/126472.png" alt="Menu Icon"></div>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+    </nav>
+  
+    <script>
+      function changeBgColor() {
+        var body = document.body;
+        if (body.style.backgroundColor === "gray") {
+          body.style.backgroundColor = "#36393e";
+          localStorage.setItem("bgColor", "#36393e"); // Store color in local storage
+        } else {
+          body.style.backgroundColor = "gray";
+          localStorage.setItem("bgColor", "gray"); // Store color in local storage
+        }
+      }
+  
+      // On page load, set background color to stored value (if it exists)
+      var storedColor = localStorage.getItem("bgColor");
+      if (storedColor) {
+        document.body.style.backgroundColor = storedColor;
+      }
+    </script>
+  </body>
+  
+  
+  
+  
+  
+    </script>
+  </body>
+  <div style="text-align: center;">
+    <button id="fullscreen-button" class="fullscreen-button" onclick="toggleFullScreen()">Fullscreen</button>
+    <br> <!-- add a line break to separate the button from the iframe -->
+    <iframe src="https://smdgames.github.io/mathgames66/7462e5fd-cbf3-4484-91ad-ad8574157409/content/w8.snokido.com/games/unity-webgl/cluster-rush/index.html" width="1200" height="800" id="my-iframe"></iframe>
+  </div>
+  
+  <style>
+    #fullscreen-button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px; /* adjust this value to position the button as desired */
+    }
+  </style>
+  
+  <script>
+    function toggleFullScreen() {
+      const iframe = document.getElementById('my-iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Safari */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE11 */
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
+  
+  
+  
+  
+  <div style="background-color: #E6E6E6; border-radius: 10px; padding: 10px; text-align: center; width: 600px; height: 140px; margin: 10px auto 0;">
+    <p style="font-family: Arial;">Cluster Rush is a fun and fast-paced arcade game where players must navigate through a series of obstacles while collecting gems. The gameplay is simple but challenging, with colorful graphics and intuitive controls. With multiple levels and increasing difficulty, Cluster Rush is a great choice for casual gamers looking for a quick and entertaining gaming experience.</p>
+  </div>
+  
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Thumbs Up/Down Buttons</title>
+    <style>
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+      }
+      #thumbs-up-btn {
+        background-color: #4CAF50;
+        margin-right: 10px;
+      }
+      #thumbs-down-btn {
+        background-color: #f44336;
+        margin-left: 10px;
+      }
+      .count {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+      var thumbsUpCount = parseInt(localStorage.getItem(getLocalStorageKey("thumbsUpCount"))) || 0;
+      var thumbsDownCount = parseInt(localStorage.getItem(getLocalStorageKey("thumbsDownCount"))) || 0;
+      var thumbsUpBtn = document.getElementById("thumbs-up-btn");
+      var thumbsDownBtn = document.getElementById("thumbs-down-btn");
+  
+      if (localStorage.getItem(getLocalStorageKey("thumbsUpClicked"))) {
+        thumbsUpBtn.disabled = true;
+      }
+      if (localStorage.getItem(getLocalStorageKey("thumbsDownClicked"))) {
+        thumbsDownBtn.disabled = true;
+      }
+  
+      function thumbsUp() {
+        thumbsUpCount++;
+        localStorage.setItem(getLocalStorageKey("thumbsUpCount"), thumbsUpCount);
+        localStorage.setItem(getLocalStorageKey("thumbsUpClicked"), true);
+        thumbsUpBtn.disabled = true;
+        document.getElementById("thumbs-up-count").innerText = thumbsUpCount;
+      }
+  
+      function thumbsDown() {
+        thumbsDownCount++;
+        localStorage.setItem(getLocalStorageKey("thumbsDownCount"), thumbsDownCount);
+        localStorage.setItem(getLocalStorageKey("thumbsDownClicked"), true);
+        thumbsDownBtn.disabled = true;
+        document.getElementById("thumbs-down-count").innerText = thumbsDownCount;
+      }
+  
+      function getLocalStorageKey(key) {
+        // Use the page URL as a prefix to the key
+        return window.location.href + "urcodeherern" + key;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="button-container">
+      <button onclick="thumbsUp()" id="thumbs-up-btn">👍🏽<br><span class="count" id="thumbs-up-count"></span></button>
+      <button onclick="thumbsDown()" id="thumbs-down-btn">👎🏽<br><span class="count" id="thumbs-down-count"></span></button>
+    </div>
+  
+    <script>
+      document.getElementById("thumbs-up-count").innerText = localStorage.getItem(getLocalStorageKey("thumbsUpCount")) || 0;
+      document.getElementById("thumbs-down-count").innerText = localStorage.getItem(getLocalStorageKey("thumbsDownCount")) || 0;
+    </script>
+  </body>
+  </html>
+  
